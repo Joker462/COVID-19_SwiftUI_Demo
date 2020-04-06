@@ -22,7 +22,6 @@
 		B25CEAC32438E9E100125E71 /* NewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25CEAC22438E9E100125E71 /* NewsDetailView.swift */; };
 		B25CEAC72438EACB00125E71 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25CEAC62438EACB00125E71 /* WebView.swift */; };
 		B25CEAC92438F48900125E71 /* NewDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25CEAC82438F48900125E71 /* NewDetailViewModel.swift */; };
-		B25D1BFB2436F3AF009CEEEE /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = B25D1BFA2436F3AF009CEEEE /* SwiftUICharts */; };
 		B267D1E8242F5E3100A790C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B267D1E7242F5E3100A790C5 /* AppDelegate.swift */; };
 		B267D1EA242F5E3100A790C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B267D1E9242F5E3100A790C5 /* SceneDelegate.swift */; };
 		B267D1EC242F5E3100A790C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B267D1EB242F5E3100A790C5 /* ContentView.swift */; };
@@ -47,6 +46,7 @@
 		B27F4A982435B15A0079147A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F4A972435B15A0079147A /* SearchView.swift */; };
 		B28D7D8A2434FB6F00BDB865 /* CovidCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28D7D892434FB6F00BDB865 /* CovidCountryView.swift */; };
 		B28D7D8C24350BCF00BDB865 /* CovidCountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28D7D8B24350BCF00BDB865 /* CovidCountryViewModel.swift */; };
+		B2A668EF243BA19A008751E1 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = B2A668EE243BA19A008751E1 /* SwiftUICharts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B25D1BFB2436F3AF009CEEEE /* SwiftUICharts in Frameworks */,
+				B2A668EF243BA19A008751E1 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +329,7 @@
 			);
 			name = Covid19;
 			packageProductDependencies = (
-				B25D1BFA2436F3AF009CEEEE /* SwiftUICharts */,
+				B2A668EE243BA19A008751E1 /* SwiftUICharts */,
 			);
 			productName = Covid19;
 			productReference = B267D1E4242F5E3100A790C5 /* Covid19.app */;
@@ -360,7 +360,7 @@
 			);
 			mainGroup = B267D1DB242F5E3100A790C5;
 			packageReferences = (
-				B25D1BF92436F3AF009CEEEE /* XCRemoteSwiftPackageReference "ChartView" */,
+				B2A668ED243BA19A008751E1 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = B267D1E5242F5E3100A790C5 /* Products */;
 			projectDirPath = "";
@@ -622,7 +622,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B25D1BF92436F3AF009CEEEE /* XCRemoteSwiftPackageReference "ChartView" */ = {
+		B2A668ED243BA19A008751E1 /* XCRemoteSwiftPackageReference "ChartView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView";
 			requirement = {
@@ -633,9 +633,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B25D1BFA2436F3AF009CEEEE /* SwiftUICharts */ = {
+		B2A668EE243BA19A008751E1 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B25D1BF92436F3AF009CEEEE /* XCRemoteSwiftPackageReference "ChartView" */;
+			package = B2A668ED243BA19A008751E1 /* XCRemoteSwiftPackageReference "ChartView" */;
 			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */
