@@ -15,13 +15,13 @@ This APIs project park a fork from [NovelCODVID](https://github.com/NovelCOVID/A
 
 * If you get the SwiftUICharts dependency error, you remove the  ChartView package from the Swift Packages of the project
 
-[!screenshot]()
+[!screenshot](https://github.com/Joker462/COVID-19_SwiftUI_Demo/blob/master/error.png)
 
 * In Xcode got to File -> Swift Packages -> Add Package Dependency and paste inthe repo's url: https://github.com/AppPear/ChartView
 
 ## Demo
 
-[!screenshots]()
+[!screenshots](https://github.com/Joker462/COVID-19_SwiftUI_Demo/blob/master/example.png)
 
 ## License
 
