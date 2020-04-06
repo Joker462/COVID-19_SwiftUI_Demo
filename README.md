@@ -11,7 +11,7 @@ This APIs project park a fork from [NovelCODVID](https://github.com/NovelCOVID/A
 ## Requirements
 * iOS 13 and Xcode 11
 * Please sign up and request to get your api key from [NewsAPI](https://newsapi.org/)
-* Add your api key from `NewsAPI` to the `NEWSAPIKEY` of the `CovidEndPoint.swift` file.
+* Add your api key from `NewsAPI` to the `NEWSAPIKEY` property of the `CovidEndPoint.swift` file.
 
 * If you get the SwiftUICharts dependency error, you remove the  ChartView package from the Swift Packages of the project
 
