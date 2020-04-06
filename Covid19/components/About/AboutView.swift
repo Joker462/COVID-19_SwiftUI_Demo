@@ -11,8 +11,20 @@ import SwiftUI
 
 struct AboutView: View {
     var body: some View {
-        Color.yellow
-        .navigationBarTitle("Henry Thai")
+        VStack {
+            Text("This application displaying the coronavirus information (COVID-19).")
+                .padding(.bottom)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            VStack {
+                Text("About me:")
+                Button("Hung Thai") {
+                    UIApplication.shared.open(URL(string: "https://github.com/Joker462")!)
+                }
+            }.frame(maxWidth: .infinity, alignment: .leading)
+            Spacer()
+        }.padding()
+            
+        .navigationBarTitle("About")
     }
 }
 
