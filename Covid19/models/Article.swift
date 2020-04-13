@@ -24,14 +24,21 @@ struct Article: Codable, Identifiable {
         case descriptionText = "description"
     }
     
-    func getURLImage() -> URL? {
-        guard let urlString = urlToImage else { return nil }
-        return URL(string: urlString)
+    func getURLImage() -> URL {
+        guard let urlString = urlToImage,
+            let url = URL(string: urlString) else { fatalError("the image url not found") }
+        return url
     }
     
     func getURLLinkForWeb() -> URLRequest? {
         guard let urlString = url,
             let url = URL(string: urlString) else { return nil }
         return URLRequest(url: url)
+    }
+    
+    func getURL() -> URL {
+        guard let urlString = url,
+            let url = URL(string: urlString) else { fatalError("the url isn't correct") }
+        return url
     }
 }

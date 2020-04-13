@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 final class URLSessionProvider<EndPointProvider: EndPoint>: Provider {
     
@@ -41,8 +42,23 @@ final class URLSessionProvider<EndPointProvider: EndPoint>: Provider {
         task?.cancel()
     }
     
+    func request<T>(_ endPoint: EndPointProvider, with type: T.Type) -> AnyPublisher<T, Error> where T : Decodable {
+        guard let request = URLRequest(endPoint: endPoint) else { fatalError("URLRequest cannot initialize") }
+        // Can be log network request here
+        print("URL  \(request.url!)")
+        return run(request)
+    }
+    
+    func request(_ endPoint: EndPointProvider) -> AnyPublisher<Data, Error> {
+        guard let request = URLRequest(endPoint: endPoint) else { fatalError("URLRequest cannot initialize") }
+        // Can be log network request here
+        print("URL  \(request.url!)")
+        return handleDataResponse(request)
+    }
+    
+    
+    // MARK: - Private methods
     private func handleDataResponse(data: Data?, response: HTTPURLResponse, completion: (NetworkResponse) -> ())  {
-        
         switch response.statusCode {
         case 200...299:
             guard let data = data else { return completion(.failure(NetworkError.noData.rawValue)) }
@@ -62,6 +78,26 @@ final class URLSessionProvider<EndPointProvider: EndPoint>: Provider {
             completion(.failure(NetworkError.failed.rawValue))
             break
         }
+    }
+  
+    private func run<T: Decodable>(_ request: URLRequest) -> AnyPublisher<T, Error> {
+        return URLSession.shared
+            .dataTaskPublisher(for: request)
+            .map { $0.data }
+            .handleEvents(receiveOutput: { print(NSString(data: $0, encoding: String.Encoding.utf8.rawValue)!) })
+            .decode(type: T.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+  
+    private func handleDataResponse(_ request: URLRequest) -> AnyPublisher<Data, Error> {
+        return URLSession.shared
+        .dataTaskPublisher(for: request)
+        .map { $0.data }
+        .handleEvents(receiveOutput: { print(NSString(data: $0, encoding: String.Encoding.utf8.rawValue)!) })
+        .mapError { $0 as Error }
+        .receive(on: DispatchQueue.main)
+        .eraseToAnyPublisher()
     }
     
 }
