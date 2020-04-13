@@ -11,11 +11,11 @@ Thank [Vadim Bulavin](https://www.vadimbulavin.com/modern-mvvm-ios-app-architect
 ## Requirements
 * iOS 13 and Xcode 11
 * Please sign up and request to get your api key from [NewsAPI](https://newsapi.org/)
-* Add your api key from `NewsAPI` to the `NEWSAPIKEY` of the `CovidEndPoint.swift` file.
+* Add your api key from `NewsAPI` to the `NEWSAPIKEY` property of the `CovidEndPoint.swift` file.
 
 ## Demo
 
-[!screenshots](https://github.com/Joker462/COVID-19_SwiftUI_Demo/blob/master/example.png)
+![screenshots](https://github.com/Joker462/COVID-19_SwiftUI_Demo/blob/master/example.png)
 
 ## License
 
