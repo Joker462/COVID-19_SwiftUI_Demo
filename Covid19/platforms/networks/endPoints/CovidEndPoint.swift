@@ -36,7 +36,7 @@ extension CovidEndPoint: EndPoint {
             guard let url = URL(string: "https://newsapi.org/v2") else { fatalError("baseURL could not be configured.")}
             return url
         default:
-            guard let url = URL(string: "https://corona.lmao.ninja") else { fatalError("baseURL could not be configured.")}
+            guard let url = URL(string: "https://corona.lmao.ninja/v2") else { fatalError("baseURL could not be configured.")}
             return url
         }
     }
@@ -48,7 +48,7 @@ extension CovidEndPoint: EndPoint {
         case .allCountries:
             return "/countries"
         case let .historicalDataOfCountry(countryName):
-            return "/v2/historical/" + countryName
+            return "/historical/" + countryName
         case .news:
             return "/everything"
         }
